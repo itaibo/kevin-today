@@ -1,0 +1,34 @@
+name: Check for Kevin Bacon
+
+on:
+  schedule:
+  - cron: '30 9 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Create env file
+      run: |
+        touch .env
+        echo TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }} >> .env
+        echo TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} >> .env
+        echo KEVIN_BACON_TODAY_MESSAGE=${{ secrets.KEVIN_BACON_TODAY_MESSAGE }} >> .env
+    
+    - name: Execute cron
+      run: npm run start
