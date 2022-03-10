@@ -1,5 +1,5 @@
 # Kevin Today
-Checks if the Kevin Bacon burger is on Goiko's daily special. Join the the [Kevin Bacon Hoy](https://t.me/kevinbacontoday) Telegram Channel to see when your favorite burger is available!
+Checks if the Kevin Bacon burger is on Goiko's daily special. Join the the [Kevin Bacon Hoy](https://t.me/kevinbacontoday) Telegram Channel (in Spanish) to see when your favorite burger is available!
 
 <center>
 	<img src="assets/images/kevin-bacon.jpg" width="50%">
