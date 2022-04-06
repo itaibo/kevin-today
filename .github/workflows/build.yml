@@ -2,7 +2,7 @@ name: Check for Kevin Bacon
 
 on:
   schedule:
-  - cron: '30 9 * * *'
+  - cron: '30 7 * * *'
 
 jobs:
   scheduled:
